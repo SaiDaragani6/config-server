@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: student-service
   datasource:
     url: jdbc:mysql://localhost:3306/practice_studentdb?createDatabaseIfNotExist=true
     username: root
@@ -36,6 +34,7 @@ springdoc:
           path: /api/users/swagger-ui.html
           operationsSorter: method
           tagsSorter: alpha
+
 
 
 
