@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/practice_authdb?createDatabaseIfNotExist=true
+    username: root
+    password: cab_booking
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+app:
+  jwt-secret: 705819a89f19aa889354a7b526fb5bedd143beec344fccc73aafd1fdfb0b8b47
+  jwt-expiration-milliseconds: 604800000
+
+springdoc:
+  api-docs:
+    path: /api/auth/v3/api-docs
+  swagger-ui:
+    path: /api/auth/swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
