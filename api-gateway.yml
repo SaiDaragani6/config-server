@@ -11,8 +11,8 @@ spring:
   cloud:
     gateway:
       routes:
-        # Public routes (no authentication required)
-        - id: auth-service-public
+        
+        - id: auth-service
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/api/auth/login,/api/auth/register,/api/auth/generateToken
@@ -105,4 +105,5 @@ logging:
     org.springframework.boot: INFO
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
 
